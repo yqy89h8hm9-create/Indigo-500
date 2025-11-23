@@ -1,0 +1,77 @@
+name: Build AsciiDoc with GitHub Pages
+run-name: ${{ github.workflow }} (${{ github.ref_name }}) by @${{ github.actor }}
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - name: Step summary
+      run: |
+        echo "|Properties|Value|" >> $GITHUB_STEP_SUMMARY
+        echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+        echo "|GitHub Ref|\`${{ github.ref }}\`|" >> $GITHUB_STEP_SUMMARY
+        echo "|Commit Hash|\`${{ github.sha }}\`|" >> $GITHUB_STEP_SUMMARY
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+
+    - name: Install asciidoctor
+      run: sudo apt install -y asciidoctor
+
+    - name: Install graphviz (Required for asciidoctor-diagram)
+      run: sudo apt install graphviz
+
+    - name: Install asciidoctor-diagram
+      run: sudo gem install asciidoctor-diagram
+
+    - name: Install rouge
+      run: sudo gem install rouge
+
+    - name: Show shell script attributes
+      run: ls -l ./doc/scripts/build-adoc.sh
+
+    - name: Make shell script executable
+      run: chmod +x ./doc/scripts/build-adoc.sh
+
+    - name: Build AsciiDoc
+      run: cd doc && make html
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site
+
+  # Deployment
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

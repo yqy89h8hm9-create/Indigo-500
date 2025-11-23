@@ -1,0 +1,113 @@
+= AZ-500: Microsoft Azure Security Technologies 学習ガイド
+
+:doctype: book
+:toc: left
+:toclevels: 2
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+:rouge-css-mode: style
+:revnumber: 1-1
+:revdate: 2024-06-27
+
+== IDとアクセスの管理 (30-35%)
+
+=== Azure Active Directory (Azure AD) IDの管理
+* AzureリソースのマネージドIDの作成と管理
+* Azure ADグループの管理
+* Azure ADユーザーの管理
+* Azure ADを使用した外部IDの管理
+* 管理ユニットの管理
+
+=== Azure ADを使用したセキュアなアクセスの管理
+* Azure AD Privileged Identity Management (PIM) の構成
+* 多要素認証を含む条件付きアクセスポリシーの実装
+* Azure AD Identity Protectionの実装
+* パスワードレス認証の実装
+* アクセスレビューの構成
+
+=== アプリケーションアクセスの管理
+* シングルサインオン (SSO) とIDプロバイダーを認証のために統合
+* アプリケーション登録の作成
+* アプリケーション登録のアクセス許可スコープの構成
+* アプリケーション登録のアクセス許可の同意の管理
+* AzureサブスクリプションおよびリソースへのAPIアクセス許可の管理
+* サービスプリンシパルの認証方法の構成
+
+=== アクセス制御の管理
+* 管理グループ、サブスクリプション、リソースグループ、およびリソースに対するAzureロールアクセス許可の構成
+* ロールとリソースのアクセス許可の解釈
+* 組み込みのAzure ADロールの割り当て
+* AzureロールとAzure ADロールを含むカスタムロールの作成と割り当て
+
+
+== プラットフォーム保護の実装 (15-20%)
+
+=== 高度なネットワークセキュリティの実装
+* ハイブリッドネットワークの接続の保護
+* 仮想ネットワークの接続の保護
+* Azure Firewallの作成と構成
+* Azure Firewall Managerの作成と構成
+* Azure Application Gatewayの作成と構成
+* Azure Front Doorの作成と構成
+* Web Application Firewall (WAF) の作成と構成
+* ストレージアカウント、Azure SQL、Azure Key Vault、またはAzure App Serviceを含むリソースファイアウォールの構成
+* Web AppsとAzure Functionsのネットワーク分離の構成
+* Azure Service Endpointsの実装
+* 他のサービスとの統合を含むAzure Private Endpointsの実装
+* Azure Private Linksの実装
+* Azure DDoS Protectionの実装
+
+=== コンピューティングに対する高度なセキュリティの構成
+* 仮想マシン (VM) のエンドポイント保護の構成
+* VMのセキュリティ更新プログラムの実装と管理
+* コンテナサービスのセキュリティの構成
+* Azure Container Registryへのアクセスの管理
+* サーバーレスコンピューティングのセキュリティの構成
+* Azure App Serviceのセキュリティの構成
+* 保存時の暗号化の構成
+* 転送中の暗号化の構成
+
+== セキュリティ運用の管理 (25-30%)
+
+=== 一元化されたポリシー管理の構成
+* カスタムセキュリティポリシーの構成
+* ポリシーイニシアティブの作成
+* Azure Policyを使用したセキュリティ設定と監査の構成
+
+=== 脅威保護の構成と管理
+* Microsoft Defender for Servers (Microsoft Defender for Endpointを除く) の構成
+* Microsoft Defender for Serversからの脆弱性スキャンの評価
+* Microsoft Defender for SQLの構成
+* Microsoft Threat Modeling Toolの使用
+
+=== セキュリティ監視ソリューションの構成と管理
+* Azure Monitorを使用したアラート規則の作成とカスタマイズ
+* Azure Monitorを使用した診断ログとログ保持の構成
+* Azure Monitorを使用したセキュリティログの監視
+* Microsoft Sentinelでのアラート規則の作成とカスタマイズ
+* Microsoft Sentinelでのコネクタの構成
+* Microsoft Sentinelでのアラートとインシデントの評価
+
+== データとアプリケーションの保護 (25-30%)
+
+=== ストレージのセキュリティの構成
+* ストレージアカウントのアクセス制御の構成
+* ストレージアカウントのアクセスキーの構成
+* Azure StorageとAzure FilesのAzure AD認証の構成
+* 委任されたアクセスの構成
+
+=== データのセキュリティの構成
+* Azure ADを使用したデータベース認証の有効化
+* データベース監査の有効化
+* SQLワークロードでの動的データマスキングの構成
+* Azure SQL Databaseのデータベース暗号化の実装
+* Azure Synapse AnalyticsとAzure Cosmos DBを含むデータソリューションのネットワーク分離の実装
+
+=== Azure Key Vaultの構成と管理
+* Key Vaultの作成と構成
+* Key Vaultへのアクセスの構成
+* 証明書、シークレット、およびキーの管理
+* キーローテーションの構成
+* 証明書、シークレット、およびキーのバックアップと復旧の構成

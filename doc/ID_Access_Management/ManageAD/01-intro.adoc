@@ -1,0 +1,27 @@
+= 1-1. Azure Active Directory を管理する
+
+:doctype: book
+:toc: left
+:toclevels: 2
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+:rouge-linenums-mode: inline
+:rouge-css-mode: style
+:revnumber: 1-1
+:revdate: 2024-06-27
+
+* 最重要項目: ID とアクセスの管理（試験の 30-35% を占める最大セクション）。
+    * 基礎: Azure Active Directory (Azure AD) の基礎
+        * テナント設定
+        * グローバル管理者と一般ユーザーの違い
+        * ユーザーとグループ
+        * 管理単位
+    * 高度なアクセス制御: 
+        * Privileged Identity Management (PIM)
+        * アクセスレビュー
+        * 条件付きアクセス
+        * 多要素認証 (MFA) など、ID のセキュリティ強化。
+    * アプリケーションと認可: 
+        * Azure AD へのアプリケーション登録とアクセス権の付与
+        * RBAC (ロールベースのアクセス制御) によるロールの割り当て
